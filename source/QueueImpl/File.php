@@ -6,7 +6,7 @@
  * @version $Id:$
  */
 
-class QueueImpl_File extends QueueImpl
+class QueueImpl_File extends QueueStruct_FIFO
 {
     /**
      * Stores dir path of input

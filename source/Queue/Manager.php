@@ -81,7 +81,7 @@ class Queue_Manager
             return false;
         }
 
-        $this->messages = $this->implement->get();
+        $this->messages = $this->implement->elements();
 
         return true;
     }

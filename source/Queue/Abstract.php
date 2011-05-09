@@ -1,19 +1,19 @@
 <?php defined('IN_TRUELEGEND') or die('No direct script access.');
 /**
- * Queue implemention class
+ * Abstract queue class
  *
  * @author zendzhang<zendzhang@hotmail.com>
  * @version $Id:$
  */
 
-class QueueImpl implements Queue
+abstract class Queue_Abstract
 {
     /**
      * Stores elements as array
      *
      * @var array
      */
-    private $elements = array();
+    protected $elements = array();
 
     /**
      * Constructor
@@ -40,14 +40,11 @@ class QueueImpl implements Queue
     }
 
     /**
-     * Pop an element from the front of the queue
+     * Pop an element from the front/end of the queue
      *
      * @return mixed
      */
-    public function pop()
-    {
-        return array_shift($this->elements);
-    }
+    abstract public function pop();
 
     /**
      * Remove an element from the queue
@@ -72,7 +69,7 @@ class QueueImpl implements Queue
      *
      * @return array
      */
-    public function get()
+    public function elements()
     {
         return $this->elements;
     }
