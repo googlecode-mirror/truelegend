@@ -71,7 +71,7 @@ class Queue_Monitor
      *
      * @return bool
      */
-    function isUpdated()
+    public function isUpdated()
     {
         clearstatcache();
 

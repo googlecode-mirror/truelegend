@@ -115,7 +115,7 @@ class QueueImpl_File extends QueueStruct_FIFO
             return false;
         }
 
-        $files = $this->listdir($limit, '^[0-9a-f]{32,32}\.ok$');
+        $files = $this->getFiles($limit, '^[0-9a-f]{32,32}\.ok$');
         if ($this->error)
         {
             return false;
@@ -215,7 +215,7 @@ class QueueImpl_File extends QueueStruct_FIFO
      */
     public function isEmpty()
     {
-        $files = $this->listdir(1, '^[0-9a-f]{32,32}\.ok$');
+        $files = $this->getFiles(1, '^[0-9a-f]{32,32}\.ok$');
 
         if ($this->error || !empty($files))
         {
@@ -262,7 +262,7 @@ class QueueImpl_File extends QueueStruct_FIFO
      *
      * @return array
      */
-    private function listdir($limit, $pattern = ".*")
+    private function getFiles($limit, $pattern = ".*")
     {
         $limit = intval($limit);
         $limit || $limit = 1000;

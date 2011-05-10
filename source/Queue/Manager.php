@@ -23,7 +23,7 @@ class Queue_Manager
     private $implement;
 
     /**
-     * Quque messages
+     * Queue messages
      *
      * @var array
      */

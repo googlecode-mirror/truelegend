@@ -26,8 +26,8 @@ function errorOut($data)
 {
     $output = array
     (
-        'status' => 0,
-        'data'   => $data
+    	'status' => 0,
+        'data' => $data
     );
 
     die(json_encode($output));
@@ -37,35 +37,29 @@ function succOut()
 {
     $output = array
     (
-        'status' => 1
+    	'status' => 1
     );
 
     die(json_encode($output));
 }
 
-$appname = isset($_REQUEST['appname']) ? trim($_REQUEST['appname']) : '';
+$queuename = isset($_REQUEST['queuename']) ? trim($_REQUEST['queuename']) : '';
 
-$message = isset($_REQUEST['message']) ? trim($_REQUEST['message']) : '';
+$queuedata = isset($_REQUEST['queuedata']) ? trim($_REQUEST['queuedata']) : '';
 
-if (empty($appname) || empty($message))
+if (empty($queuename) || empty($queuedata))
 {
     errorOut('param empty');
 }
 
-$app = BASE_QUEUE_SOURCE_APP_PATH . '/' . $appname . '/Process.php';
+$queueProcess = Queue_Factory::getQueueProcess($queuename);
 
-if (!is_file($app))
+if (!$queueProcess)
 {
-    errorOut('app no exists');
+    errorOut('queue no exists');
 }
 
-require $app;
-
-$class = "App_{$appname}_Process";
-
-$_obj = new $class();
-
-if (!$_obj->sendMessage($message))
+if (!$queueProcess->sendMessage($queuedata))
 {
     errorOut('system error');
 }

@@ -8,8 +8,8 @@
 
 $data = array
 (
-    'appname' => 'Demo',
-    'message' => 'act=add&id=100'
+    'queuename' => 'Demo',
+    'queuedata' => 'act=add&id=100'
 );
 
 $result = json_decode(httpPost('localhost', '/SendMessage.php', $data), true);

@@ -29,7 +29,7 @@ abstract class Queue_Process
      */
     public function __construct($monitorPath, $dataPath)
     {
-        $this->queue = Queue_Factory::createQueue($monitorPath, $dataPath);
+        $this->queue = Queue_Factory::getQueueManager($monitorPath, $dataPath);
 
         if (!$this->queue)
         {

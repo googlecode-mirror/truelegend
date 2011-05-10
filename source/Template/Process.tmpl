@@ -45,7 +45,7 @@ class App_%APP_QUEUE_NAME%_Process extends Queue_Process
      */
     protected function doProcess($message)
     {
-        echo $message;
+        echo $message . "\n";
 
         return true;
     }

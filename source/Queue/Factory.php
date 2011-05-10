@@ -9,13 +9,13 @@
 class Queue_Factory
 {
     /**
-     * Create queue manager
+     * Get queue manager
      *
      * @param string $monitorPath
      * @param string $dataPath
-     * @return bool
+     * @return object
      */
-    public static function createQueue($monitorPath, $dataPath)
+    public static function getQueueManager($monitorPath, $dataPath)
     {
         $monitor = new Queue_Monitor($monitorPath);
 
@@ -27,15 +27,48 @@ class Queue_Factory
             return false;
         }
 
-        $queue = new Queue_Manager($monitor, $implement);
+        $manager = new Queue_Manager($monitor, $implement);
 
-        if ($queue->error())
+        if ($manager->error())
         {
-            Logger::fatal('Get queue manager failure,error: ' . $queue->error());
+            Logger::fatal('Get queue manager failure,error: ' . $manager->error());
             return false;
         }
 
-        return $queue;
+        return $manager;
+    }
+
+    /**
+     * Get queue process
+     *
+     * @param string $name
+     * @return object
+     */
+    public static function &getQueueProcess($name)
+    {
+    	static $instances = array();
+
+    	if (isset($instances[$name]) && is_object($instances[$name]))
+    	{
+    		return $instances[$name];
+    	}
+
+    	$className = "App_{$name}_Process";
+
+        if (!class_exists($className, false)) {
+
+        	$classFile = BASE_QUEUE_SOURCE_APP_PATH . '/' . $name . '/Process.php';
+
+        	if (!is_file($classFile))
+			{
+			    return null;
+			}
+			require $classFile;
+        }
+
+		$instances[$name] = new $className();
+
+        return $instances[$name];
     }
 }
 
