@@ -1,18 +1,26 @@
 <?php defined('IN_TRUELEGEND') or die('No direct script access.');
 /**
- * UnixDaemon class
+ * Daemon base class
  *
  * Requirements:
  * Unix like operating system
- * PHP 5
+ * PHP 4 >= 4.3.0 or PHP 5
  * PHP compiled with:
  * --enable-sigchild
  * --enable-pcntl
  *
+ * @package binarychoice.system.unix
+ * @author Michal 'Seth' Golebiowski <seth at binarychoice dot pl>
+ * @copyright Copyright 2005 Seth
+ * @since 1.0.3
+ */
+
+/**
+ * UnixDaemon class
+
  * @author zendzhang<zendzhang@hotmail.com>
  * @version $Id:$
  */
-
 abstract class System_UnixDaemon
 {
     /**
