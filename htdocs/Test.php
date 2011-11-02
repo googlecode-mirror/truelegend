@@ -3,7 +3,7 @@
  * Test Send message
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 $data = array

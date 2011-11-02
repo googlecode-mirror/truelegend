@@ -3,7 +3,7 @@
  * Installer
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 // Check for CLI

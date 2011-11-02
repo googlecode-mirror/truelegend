@@ -3,7 +3,7 @@
  * LIFO(Last In,First Out) queue, Stack data structure
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 class QueueStruct_LIFO extends Queue_Abstract

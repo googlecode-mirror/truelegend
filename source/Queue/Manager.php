@@ -3,7 +3,7 @@
  * Queue manager class
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 class Queue_Manager

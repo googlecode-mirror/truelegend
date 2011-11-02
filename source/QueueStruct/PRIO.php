@@ -3,7 +3,7 @@
  * Priority queue, Heap data structure
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 class QueueStruct_PRIO extends Queue_Abstract

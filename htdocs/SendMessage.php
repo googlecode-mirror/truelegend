@@ -3,7 +3,7 @@
  * Send message API
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 // Load bootstrap

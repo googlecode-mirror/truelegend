@@ -3,7 +3,7 @@
  * FIFO(First In,First Out) queue, Queue data structure
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 class QueueStruct_FIFO extends Queue_Abstract

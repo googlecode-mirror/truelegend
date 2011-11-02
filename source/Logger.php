@@ -3,7 +3,7 @@
  * Logger Class
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 class Logger

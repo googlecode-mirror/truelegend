@@ -3,7 +3,7 @@
  * Using the file system to store queue data
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 class QueueImpl_File extends QueueStruct_FIFO

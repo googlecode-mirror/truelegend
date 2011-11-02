@@ -19,7 +19,7 @@
  * UnixDaemon class
 
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 abstract class System_UnixDaemon
 {

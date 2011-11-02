@@ -3,7 +3,7 @@
  * Bootstrap application
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 define('IN_TRUELEGEND', true);

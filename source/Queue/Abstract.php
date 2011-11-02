@@ -3,7 +3,7 @@
  * Abstract queue class
  *
  * @author zendzhang<zendzhang@hotmail.com>
- * @version $Id:$
+ * @version $Id$
  */
 
 abstract class Queue_Abstract
